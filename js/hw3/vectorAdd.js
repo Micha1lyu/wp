@@ -5,5 +5,5 @@ function vectorAdd(a, b) {
     }
     console.log(c);
 }
-var a=[1,2],b=[5,6]
+var a = [1,2],b = [5,6]
 console.log(vectorAdd(a,b))
