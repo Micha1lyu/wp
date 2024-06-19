@@ -4,5 +4,5 @@ function isPrime(n){
     }
     return true
 }
-console.log("isPrime(5) = ",isPrime(5))
-console.log("isPrime(6) = ",isPrime(6))
+console.log("5",isPrime(5))
+console.log("6",isPrime(6))
