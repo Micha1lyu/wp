@@ -3,113 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combined Houses and Shapes</title>
+    <title>Animated Houses</title>
     <style>
-        * {
-            outline: solid 1px;
-            box-sizing: border-box;
+        body {
+            background-color: blue;
+            margin: 0;
+            padding: 0;
         }
         .outside {
-            width: 175px;
-            height: 150px;
-            position: absolute;
+            width: 776px;
+            height: 100px;
+            position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            animation: run 8s infinite linear;
         }
-        .top {
+        .t {
+            width: 150px;
+            height: 100px;
+            background-color: #fff;
+            display: inline-block;
+            position: relative;
+            margin: 0 10px;
+        }
+        .windows {
+            width: 30px;
+            height: 30px;
+            background-color: #ccc;
             position: absolute;
-            top: 0;
+        }
+        .door {
+            width: 40px;
+            height: 80px;
+            position: absolute;
+            bottom: 0;
+            border: 1px solid;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 2;
+        }
+        .yellow {
+            height: 20px;
+            width: 150px;
+            background-color: #ffa81e;
+            position: absolute;
+            top: 68px;
+        }
+        .door .windows {
+            top: 10px;
             left: 0;
             right: 0;
             margin: auto;
         }
-        .bottom {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+        .windows.left {
+            top: 20px;
+            left: 14px;
         }
-        .t, .b {
-            width: 0;
-            height: 0;
-            position: absolute;
-            border-style: solid;
+        .windows.right {
+            top: 20px;
+            right: 14px;
         }
-        .t1 {
-            border-bottom: solid 50px rgb(233, 83, 94);
-            border-left: solid 30px transparent;
-            border-right: solid 28px transparent;
-            left: 0;
-            top: 0;
-            transform: translate(-50%, -100%);
+        .windows.big {
+            width: 80px;
+            height: 50px;
         }
-        .t2 {
-            border-top: solid 50px rgb(232, 69, 90);
-            border-left: solid 28px transparent;
-            border-right: solid 30px transparent;
-            left: 30px;
-            top: 0;
-            transform: translate(-50%, -100%);
+        .last .windows {
+            right: 0;
         }
-        .t3 {
-            border-bottom: solid 50px rgb(236, 109, 130);
-            border-left: solid 30px transparent;
-            border-right: solid 30px transparent;
-            left: 58px;
-            top: 0;
-            transform: translate(-50%, -100%);
+        .first {
+            border-radius: 70% 0 0 20%;
+            overflow: hidden;
         }
-        .t4 {
-            border-top: solid 50px rgb(200, 18, 55);
-            border-left: solid 30px transparent;
-            border-right: solid 28px transparent;
-            left: 88px;
-            top: 0;
-            transform: translate(-50%, -100%);
+        .last {
+            border-radius: 0 70% 20% 0;
+            overflow: hidden;
         }
-        .t5 {
-            border-bottom: solid 50px rgb(184, 43, 60);
-            border-left: solid 28px transparent;
-            border-right: solid 30px transparent;
-            left: 118px;
-            top: 0;
-            transform: translate(-50%, -100%);
+        .first .door {
+            left: unset;
+            right: 20px;
         }
-        .b1 {
-            border-top: solid 100px rgb(202, 70, 79);
-            border-left: solid 88px transparent;
-            top: 0;
-            transform: translateX(-50%);
+        .last .door {
+            right: unset;
+            left: 20px;
         }
-        .b2 {
-            border-top: solid 100px rgb(202, 70, 79);
-            border-right: solid 88px transparent;
-            top: 0;
-            transform: translateX(-50%);
-        }
-        .b3 {
-            border-top: solid 100px rgb(192, 26, 32);
-            border-right: solid 30px transparent;
-            border-left: solid 30px transparent;
-            top: 0;
-            transform: translateX(-50%);
+        @keyframes run {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
 <body>
     <div class="outside">
-        <div class="top">
-            <div class="t t1"></div>
-            <div class="t t2"></div>
-            <div class="t t3"></div>
-            <div class="t t4"></div>
-            <div class="t t5"></div>
+        <div class="t first">
+            <div class="windows big"></div>
+            <div class="door">
+                <div class="windows"></div>
+            </div>
+            <div class="yellow"></div>
         </div>
-        <div class="bottom">
-            <div class="b b1"></div>
-            <div class="b b2"></div>
-            <div class="b b3"></div>
+        <div class="t">
+            <div class="windows left"></div>
+            <div class="door">
+                <div class="windows"></div>
+            </div>
+            <div class="windows right"></div>
+            <div class="yellow"></div>
+        </div>
+        <div class="t">
+            <div class="windows left"></div>
+            <div class="door">
+                <div class="windows"></div>
+            </div>
+            <div class="windows right"></div>
+            <div class="yellow"></div>
+        </div>
+        <div class="t">
+            <div class="windows left"></div>
+            <div class="door">
+                <div class="windows"></div>
+            </div>
+            <div class="windows right"></div>
+            <div class="yellow"></div>
+        </div>
+        <div class="t last">
+            <div class="windows big"></div>
+            <div class="door">
+                <div class="windows"></div>
+            </div>
+            <div class="yellow"></div>
         </div>
     </div>
 </body>
