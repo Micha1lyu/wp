@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Example</title>
+    <style>
+        body {
+            background-color: blue;
+        }
+        .outside {
+            width: 776px;
+            height: 100px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            animation: run 4s infinite linear;
+        }
+        .t {
+            width: 150px;
+            height: 100px;
+            background-color: #fff;
+            display: inline-block;
+            position: relative;
+        }
+        .windows {
+            width: 30px;
+            height: 30px;
+            background-color: #ccc;
+            position: absolute;
+        }
+        .door {
+            width: 40px;
+            height: 80px;
+            position: absolute;
+            bottom: 0;
+            border: 1px solid;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 2;
+        }
+        .yellow {
+            height: 20px;
+            width: 150px;
+            background-color: #ffa81e;
+            position: absolute;
+            top: 68px;
+        }
+        .door .windows {
+            top: 10px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .windows.left {
+            top: 20px;
+            left: 14px;
+        }
+        .windows.right {
+            top: 20px;
+            right: 14px;
+        }
+        .windows.big {
+            width: 80px;
+            height: 50px;
+        }
+        .last .windows {
+            right: 0;
+        }
+        .first {
+            border-radius: 70% 0 0 20%;
+            overflow: hidden;
+        }
+        .last {
+            border-radius: 0 70% 20% 0;
+            overflow: hidden;
+        }
+        .first .door {
+            left: unset;
+            right: 20px;
+        }
+        .last .door {
+            right: unset;
+            left: 20px;
+        }
+        @keyframes run {
+            0% {
+                left: 0;
+            }
+            50% {
+                left: -776px;
+            }
+            50.1% {
+                left: 100%;
+            }
+            100% {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="outside">
+        <div class="t first">
+            <div class="windows big"></div>
+            <div class="door">
+                <div class="windows"></div>
+            </div>
+            <div class="yellow"></div>
+        </div>
+        <div class="t">
+            <div class="windows left"></div>
+            <div class="door">
+                <div class="windows"></div>
+            </div>
+            <div class="windows right"></div>
+            <div class="yellow"></div>
+        </div>
+        <div class="t">
+            <div class="windows left"></div>
+            <div class="door">
+                <div class="windows"></div>
+            </div>
+            <div class="windows right"></div>
+            <div class="yellow"></div>
+        </div>
+        <div class="t">
+            <div class="windows left"></div>
+            <div class="door">
+                <div class="windows"></div>
+            </div>
+            <div class="windows right"></div>
+            <div class="yellow"></div>
+        </div>
+        <div class="t last">
+            <div class="windows big"></div>
+            <div class="door">
+                <div class="windows"></div>
+            </div>
+            <div class="yellow"></div>
+        </div>
+    </div>
+</body>
+</html>
 
