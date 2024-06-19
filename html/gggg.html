@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combined Houses and Shapes</title>
@@ -13,19 +13,21 @@
             width: 175px;
             height: 150px;
             position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         .top {
-            position: relative;
-            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
         .bottom {
-            position: relative;
-            height: 50px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
         .t, .b {
             width: 0;
@@ -37,58 +39,54 @@
             border-bottom: solid 50px rgb(233, 83, 94);
             border-left: solid 30px transparent;
             border-right: solid 28px transparent;
-            left: 0;
+            left: -30px;
+            top: -100px;
         }
         .t2 {
             border-top: solid 50px rgb(232, 69, 90);
             border-left: solid 28px transparent;
             border-right: solid 30px transparent;
-            left: 30px;
+            left: 0;
+            top: -100px;
         }
         .t3 {
             border-bottom: solid 50px rgb(236, 109, 130);
             border-left: solid 30px transparent;
             border-right: solid 30px transparent;
-            left: 58px;
+            left: 28px;
+            top: -100px;
         }
         .t4 {
             border-top: solid 50px rgb(200, 18, 55);
             border-left: solid 30px transparent;
             border-right: solid 28px transparent;
-            left: 88px;
+            left: 58px;
+            top: -100px;
         }
         .t5 {
             border-bottom: solid 50px rgb(184, 43, 60);
             border-left: solid 28px transparent;
             border-right: solid 30px transparent;
-            left: 118px;
+            left: 88px;
+            top: -100px;
         }
         .b1 {
             border-top: solid 100px rgb(202, 70, 79);
             border-left: solid 88px transparent;
-            top: 50px;
+            top: -50px;
         }
         .b2 {
             border-top: solid 100px rgb(202, 70, 79);
             border-right: solid 88px transparent;
-            top: 50px;
+            top: -50px;
             left: 88px;
         }
         .b3 {
             border-top: solid 100px rgb(192, 26, 32);
             border-right: solid 30px transparent;
             border-left: solid 30px transparent;
-            top: 50px;
+            top: -50px;
             left: 58px;
-        }
-        .t, .b {
-            transform-origin: top left;
-        }
-        .t {
-            transform: translateY(-50%);
-        }
-        .b {
-            transform: translateY(-50%) rotateX(180deg);
         }
     </style>
 </head>
