@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animation Example</title>
+    <title>Animated Houses</title>
     <style>
         body {
             background-color: blue;
+            margin: 0;
+            padding: 0;
         }
         .outside {
             width: 776px;
             height: 100px;
             position: fixed;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            animation: run 4s infinite linear;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: run 8s infinite linear;
         }
         .t {
             width: 150px;
@@ -23,6 +25,7 @@
             background-color: #fff;
             display: inline-block;
             position: relative;
+            margin: 0 10px;
         }
         .windows {
             width: 30px;
@@ -87,16 +90,13 @@
         }
         @keyframes run {
             0% {
-                left: 0;
+                transform: translateX(0);
             }
             50% {
-                left: -776px;
-            }
-            50.1% {
-                left: 100%;
+                transform: translateX(-100%);
             }
             100% {
-                left: 0%;
+                transform: translateX(0);
             }
         }
     </style>
@@ -144,4 +144,3 @@
     </div>
 </body>
 </html>
-
