@@ -10,3 +10,4 @@ function lcm(a,b){
     return (a * b) / gcd(a,b)
 }
 console.log(lcm(7, 5))
+console.log(lcm(3, 15))
