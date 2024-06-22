@@ -1,0 +1,27 @@
+<html>
+<body>
+<button onclick="startMoving()">Button1</button>
+<script>
+function job(){
+    let left = Math.random() * (window.innerWidth - width)
+    let top1 = Math.random() * (window.innerHeight - height)
+    b.style.cssText = `position:${position}; width:${width}px; height:${height}px; left:${left}px; top:${top1}px;`
+}
+
+function startMoving(){
+	if (!moving){
+		intervalId = setInterval(job, 500);
+        moving = true;
+                }
+            }
+
+let height = 50
+let width = 100
+let moving = false;
+let position = 'absolute'
+let b = document.querySelector('button')
+let intervalId;
+b.style.cssText = `position:${position}; width:${width}px; height:${height}px; left:20px; top:20px;`
+</script>
+</body>
+</html>
