@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catch the Red Dot</title>
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+    .game-container {
+        position: relative;
+        width: 80%;
+        height: 80%;
+        border: 2px solid #333;
+        background-color: #fff;
+    }
+    #red-dot {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: red;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .score-board {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 24px;
+    }
+</style>
+</head>
+<body>
+    <div class="game-container">
+        <div id="red-dot"></div>
+        <div class="score-board">
+            Score: <span id="score">0</span>
+        </div>
+    </div>
+    <script>
+        const redDot = document.getElementById('red-dot');
+        const scoreBoard = document.getElementById('score');
+        let score = 0;
+
+        function getRandomPosition() {
+            const gameContainer = document.querySelector('.game-container');
+            const containerWidth = gameContainer.clientWidth;
+            const containerHeight = gameContainer.clientHeight;
+
+            const x = Math.random() * (containerWidth - redDot.offsetWidth);
+            const y = Math.random() * (containerHeight - redDot.offsetHeight);
+
+            return { x, y };
+        }
+
+        function moveRedDot() {
+            const { x, y } = getRandomPosition();
+            redDot.style.left = `${x}px`;
+            redDot.style.top = `${y}px`;
+        }
+
+        redDot.addEventListener('click', () => {
+            score++;
+            scoreBoard.textContent = score;
+            moveRedDot();
+        });
+
+        // Initial position
+        moveRedDot();
+    </script>
+</body>
+</html>
