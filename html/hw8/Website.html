@@ -1,1 +1,103 @@
-
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; 
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #bbb;
+            background-image: url('https://preview.redd.it/ew97aaxdrhq61.png?auto=webp&s=a542753787da211e63836ee5a5087b990a1242d3');
+            background-size: 300px auto;
+            padding: 20px;
+            justify-content: space-between;
+        }
+        .header img {
+            width: 50px;
+            height: 50px;
+        }
+        .header .title {
+            flex-grow: 1;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #ccc;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .navbar a:hover {
+            background-color: #1B5E20;
+            border-radius: 5px;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background-color: #fafafa;
+            text-align: center;
+        }
+        .main-content {
+            flex: 2;
+            padding: 20px;
+            text-align: center;
+            background-color: #f5f5f5; 
+        }
+        .footer {
+            background-color: #ddd;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://cdn.vox-cdn.com/thumbor/wfbQ3XccV6SxGMt1l6zBPL3Xg7o=/0x0:1192x795/1400x1050/filters:focal(596x398:597x399)/cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg" alt="Logo">
+        <div class="title">Not My Website</div>
+    </div>
+    <div class="navbar">
+        <a href="https://www.youtube.com/watch?v=KEN6S2beTc0">Steam</a>
+        <a href="https://fakeupdate.net/sarcastic/">Take a break</a>
+        <a href="https://www.instagram.com/instagram?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Left Side</h2>
+            <p>Never gonna give you up.</p>
+        </div>
+        <div class="main-content">
+            <h1>Main</h1>
+            <p>Never gonna run around and desert you</p>
+            <img src="https://pbs.twimg.com/profile_images/555249125176799232/zo0u-0D3_400x400.png" alt="Marmot">
+        </div>
+        <div class="sidebar">
+            <h2>Right Side</h2>
+            <p>Never gonna let you down.</p>
+        </div>
+    </div>
+    <div class="footer">
+        I am footer
+    </div>
+</body>
+</html>
